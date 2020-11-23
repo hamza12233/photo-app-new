@@ -11,6 +11,9 @@ Rails.application.configure do
   config.eager_load = true
 
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options ={:host => 'photo-app-newone.herokuapp.com', :protocol => 'https'}
 
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.sendgrid.net',
@@ -21,8 +24,6 @@ Rails.application.configure do
     :domain => 'heroku.com',
     :enable_starttls_auto => true
   }
-  config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options ={:host => 'photo-app-newone.herokuapp.com', :protocol => 'https'}
 
 #   ActionMailer::Base.smtp_settings = {
 #     :user_name => ENV['SENDGRID_USERNAME'],
